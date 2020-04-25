@@ -1,68 +1,41 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Title: Knights of Coding
 
-## Available Scripts
+## Description
+This app was made to show the code exercises I've done on Codewars.com, let people search for other Codewars accounts, and filter through different programming languages when looking which katas (code challenges) that they've done. They will be presented as convenient UI elements that let users quickly look at the language, title and rank of different katas. As opposed to the default Codewars theme, this app has a castle theme that aims to present katas as trophies on a trophy case. Stretch goals include a sub-area where the user try some of the easier algos. 
 
-In the project directory, you can run:
+## Wireframes
 
-### `npm start`
+TBD
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Component Hierarchy 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Some components in this draft may be further broken down with more components. Also this hierarchy tree does not include the folder structure of how the components are stored. The folders will probably correspond with the different Routes.
 
-### `npm test`
+![Component Hierarchy Image](./project_hierarchy.png)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## API: Codewars API
 
-### `npm run build`
+[Link to Codewars API](https://dev.codewars.com/#get-user)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The Codewars API has one call to get info about a user account, and a second API call to get the code challenges (kata) done by the user. They also have an API call to get description information and a url link for each specific kata. This last API call I would have to make when the user clicks a button to get more details about a particular kata.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## MVP 
+  * React app that uses React-router-dom
+  * Aside from index.js and App.js, I plan to have at least 3 stateful components at least as many (probably 5) display components 
+  * I plan to have a folder structure that separates components for each Route. The component tree will be as close as possible to my component hierarchy diagram.
+  * I plan to use Axios calls to get the user data, and then for the kata details page, an Axios call upon __componentDidMount()__. Since I plan to use hooks, it would be __useEffect( func, [] )__.
+  * I plan to not only style the page but I have a castle/knight aesthetic I want to implement with CSS and maybe some simple images I plan to draw. I will probably write the CSS in App.css to start but if it gets really long I will create and import separate CSS files inside each separate folder for each path. 
+  * I will deploy via Surge or Netlify.
+  * To fulfill basic MVP, I will make a Storybook setup to show my different styled components. I will probably have more than the minimum number of components because I plan to make some styled thumbnails and other aesthetic elements.
+  * One of the features I would like to include as MVP is the ability to filter the completed kata list of the account that was searched, so the user can choose only a certain language or look for a word match within a title. Also I may put in the option to filter, or rank the list of katas by their rank (Codewars has it's own ranking system for katas).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Post-MVP 
+  * One of my more ambitious MVP goals is to use Javascript eval() to make an area where users can try some algo questions on my app. Unfortunately, Codewars does not give the test cases in their code challenges API call. Obviously, my version would have far fewer features than a site like Codewars or Leetcode but I have played around with this idea before and would like to try implementing it with a JSON file of questions of similar difficulty to our homework questions.
+  * I would try to fulfill one of the other MVP goals of writing 15 jest tests for my app. These would probably test the functionality of the component using a JSON file, or I would have to do some search into using jest/enzyme with the async functional call that our API needs to make.  
 
-### `npm run eject`
+## SWOT Analysis 
+My strengths and one of my main interests is things like algorithms, and creating code to produce certain effects. Writing a Codewars type "code in this box" set up with some rudimentary testing is something I played with last week, and have thought about for a while (I have also used Leetcode which is similar) so I am interested in diving deeper for my post-MVP. Based on some of my early experiments, I can emulate a basic (and obviously much less robust) version of the "code in this box" formula as long as I had some test data in an array (unfortunately not available).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+My usual weakness is both creativity and associated uncertainty. This time I wanted to tackle that by having a straight forward theme (knights and trophies to represent challenges). I also felt like Storybook and having a component library to easily access the aesthetic design choices was something I never considered doing, whereas testing was always on my mind before starting GA-sei (because sites like Codewars and Leetcode literally test your code before letting you pass the challenge). 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+I think the main threat is not carefully guiding myself between the lines of having a project that is too simple, versus having an unfinished project by having unrealistic goals. I hope that by setting the basic MVP slightly simpler, I can use an iterative process and post MVP goals to take the project to a higher level.
