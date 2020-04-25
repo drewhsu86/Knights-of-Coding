@@ -11,7 +11,7 @@ TBD
 
 Some components in this draft may be further broken down with more components. Also this hierarchy tree does not include the folder structure of how the components are stored. The folders will probably correspond with the different Routes.
 
-![Component Hierarchy Image](project_hierarchy.png)
+![Component Hierarchy Image](project2_hierarchy.png)
 
 ## API: Codewars API
 
