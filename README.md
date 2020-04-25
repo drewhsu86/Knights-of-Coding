@@ -23,7 +23,7 @@ The Codewars API has one call to get info about a user account, and a second API
   * React app that uses React-router-dom
   * Aside from index.js and App.js, I plan to have at least 3 stateful components at least as many (probably 5) display components 
   * I plan to have a folder structure that separates components for each Route. The component tree will be as close as possible to my component hierarchy diagram.
-  * I plan to use Axios calls to get the user data, and then for the kata details page, an Axios call upon __componentDidMount()__. Since I plan to use hooks, it would be __useEffect( func, [] )__.
+  * I plan to use Axios calls to get the user data, and then another Axios call when a specific kata is clicked on.
   * I plan to not only style the page but I have a castle/knight aesthetic I want to implement with CSS and maybe some simple images I plan to draw. I will probably write the CSS in App.css to start but if it gets really long I will create and import separate CSS files inside each separate folder for each path. 
   * I will deploy via Surge or Netlify.
   * To fulfill basic MVP, I will make a Storybook setup to show my different styled components. I will probably have more than the minimum number of components because I plan to make some styled thumbnails and other aesthetic elements.
