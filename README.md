@@ -38,4 +38,6 @@ My strengths and one of my main interests is things like algorithms, and creatin
 
 My usual weakness is both creativity and associated uncertainty. This time I wanted to tackle that by having a straight forward theme (knights and trophies to represent challenges). I also felt like Storybook and having a component library to easily access the aesthetic design choices was something I never considered doing, whereas testing was always on my mind before starting GA-sei (because sites like Codewars and Leetcode literally test your code before letting you pass the challenge). 
 
+Another expected blocker for post-MVP is testing components that need to complete an API call to show results. I have not researched that at all in the pre-project stage so I will make a note of that in the SWOT analysis.
+
 I think the main threat is not carefully guiding myself between the lines of having a project that is too simple, versus having an unfinished project by having unrealistic goals. I hope that by setting the basic MVP slightly simpler, I can use an iterative process and post MVP goals to take the project to a higher level.
