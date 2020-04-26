@@ -5,7 +5,17 @@ This app was made to show the code exercises I've done on Codewars.com, let peop
 
 ## Wireframes
 
-TBD
+For simplicity, the wireframes won't include post-mvp content but post-MVP content aims to share the same styles and responsiveness as the MVP app. Also, the browser view omits wireframes for the home and kata pages because they are the most straightforward.
+
+#### Mobile wireframes
+
+![Mobile wireframes](project2_wireframe_mobile.png)
+
+#### Browser wireframes 
+
+![Mobile wireframes](project2_wireframe_browser1.png)
+
+![Mobile wireframes](project2_wireframe_browser2.png)
 
 ## Component Hierarchy 
 
