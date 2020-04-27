@@ -58,20 +58,20 @@ Estimated times filled in and completed time to be filled in:
 
 | Activity | Estimated Time (hrs) | Actual Time (hrs) |
 | -------- | -------------- | ----------- |
-| __Monday__ | April 26 | |
+| __Monday__ | April 27 | |
 | Project Approval | <= 1 | |
 | Basic React App with Nav and Routes | 0.5 | |
 | Home route: basic page with text and buttons | 0.5 | | 
 | Find users route: API call and display user data | 1 | |
 | User data components such as kata thumbnails | 3 | |
 | Kata route: send parameters and display on new component | 2 | |
-| __Tuesday__ | April 27 | |
+| __Tuesday__ | April 28 | |
 | Install Storybook and make library of components | 4 | |
 | Continue CSS | 2 | |
 | Kata filtering system pt.1 | 2 | |
-| __Wednesday__ | April 28 | |
+| __Wednesday__ | April 29| |
 | Kata filtering system pt.2 | 6 | |
 | Continue CSS and Storybook | 2 | |
-| __Thursday (post-MVP)__ | April 29 | |
+| __Thursday (post-MVP)__ | April 30 | |
 | Post-MVP code-in-this-box with eval() | 5 | |
 | Jest/Enzyme testing | 3 |  |
