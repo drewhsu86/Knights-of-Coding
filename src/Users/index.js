@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-
+import ShowUser from './ShowUser'
 
 // constant variables 
 const CODEWARS_API = `https://www.codewars.com/api/v1/`
@@ -20,14 +20,12 @@ export default function Index(props) {
   const [nameIpt, updNameIpt] = useState('drewhsu86')
   const [filterWordInpt, updFilterWordIpt] = useState('')
 
-  // code to force an update because we need to wait for 
-  // 2 api calls (2 async functions)
-  // code from: https://stackoverflow.com/questions/53215285/how-can-i-force-component-to-re-render-with-hooks-in-react
-  const [, forceUpdate] = useState()
 
   // variables from props 
   const user = props.user
   const addUser = props.addUser
+  const addKatas = props.addKatas
+  const forceUpdate = props.forceUpdate
 
   // ===============
   // lifecycle functions   
@@ -85,25 +83,11 @@ export default function Index(props) {
   function handleClickSearch(e) {
     e.preventDefault()
 
-    const userToAdd = {
-      userInfo: {},
-      userKatas: []
-    }
-
     // call for user data 
-    apiCall(`${CODEWARS_API}users/${nameIpt}`, (user) => {
-      userToAdd.userInfo = user
-      forceUpdate()
-    }, ['data'])
+    apiCall(`${CODEWARS_API}users/${nameIpt}`, addUser, ['data'])
     // call for user's code challenges 
-    apiCall(`${CODEWARS_API}users/${nameIpt}/code-challenges/completed`, (katas) => {
-      userToAdd.userKatas = katas
-      forceUpdate()
-    }, ['data', 'data'])
+    apiCall(`${CODEWARS_API}users/${nameIpt}/code-challenges/completed`, katas => addKatas(katas, nameIpt), ['data', 'data'])
 
-    // adds user (the object has keys so even if the info 
-    // is filled in async the object will have them)
-    addUser(userToAdd)
   }
 
 
@@ -114,7 +98,11 @@ export default function Index(props) {
         onClick={handleClickSearch}
       >
         Search
-        </button>
+      </button>
+      {
+        user ? <ShowUser user={user} /> : null
+      }
+
     </div>
   )
 }
