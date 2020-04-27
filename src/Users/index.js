@@ -85,9 +85,25 @@ export default function Index(props) {
   function handleClickSearch(e) {
     e.preventDefault()
 
-    // call for user data 
-    apiCall(`${CODEWARS_API}users/${nameIpt}`, addUser, ['data'])
+    const userToAdd = {
+      userInfo: {},
+      userKatas: []
+    }
 
+    // call for user data 
+    apiCall(`${CODEWARS_API}users/${nameIpt}`, (user) => {
+      userToAdd.userInfo = user
+      forceUpdate()
+    }, ['data'])
+    // call for user's code challenges 
+    apiCall(`${CODEWARS_API}users/${nameIpt}/code-challenges/completed`, (katas) => {
+      userToAdd.userKatas = katas
+      forceUpdate()
+    }, ['data', 'data'])
+
+    // adds user (the object has keys so even if the info 
+    // is filled in async the object will have them)
+    addUser(userToAdd)
   }
 
 
