@@ -1,24 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { Route, Link } from 'react-router-dom'
+import Users from './Users'
+
+import Home from './Home'
+import Nav from './Home/Nav'
 
 function App() {
+  // ===========
+  // states 
+  // ===========
+  const [users, updUsers] = useState([])
+
+  // ===========
+  // functions 
+  // ===========
+  function childAddUsers(user, key) {
+    users.unshift(user)
+    updUsers(users)
+
+    // can confirm if user was added 
+    console.log(users)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav />
+
+      <Route path="/" exact>
+        <Home />
+      </Route>
+      <Route path="/users">
+        <Users
+          user={users.length > 0 ? users[0] : null}
+          addUser={childAddUsers}
+        />
+      </Route>
     </div>
   );
 }
