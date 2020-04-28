@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import ShowUser from './ShowUser'
+import ShowKatas from './ShowKatas'
 
-// constant variables 
+// =========================================
+// constants outside of functional component
+// =========================================
+
 const CODEWARS_API = `https://www.codewars.com/api/v1/`
 
 export default function Index(props) {
@@ -23,9 +27,10 @@ export default function Index(props) {
 
   // variables from props 
   const user = props.user
+  const katas = props.katas
   const addUser = props.addUser
   const addKatas = props.addKatas
-  const forceUpdate = props.forceUpdate
+
 
   // ===============
   // lifecycle functions   
@@ -86,10 +91,13 @@ export default function Index(props) {
     // call for user data 
     apiCall(`${CODEWARS_API}users/${nameIpt}`, addUser, ['data'])
     // call for user's code challenges 
-    apiCall(`${CODEWARS_API}users/${nameIpt}/code-challenges/completed`, katas => addKatas(katas, nameIpt), ['data', 'data'])
+    apiCall(`${CODEWARS_API}users/${nameIpt}/code-challenges/completed`, kata => addKatas(kata, nameIpt), ['data', 'data'])
 
   }
 
+  // ===========
+  // return
+  // ===========
 
   return (
     <div className="users">
@@ -101,6 +109,9 @@ export default function Index(props) {
       </button>
       {
         user ? <ShowUser user={user} /> : null
+      }
+      {
+        user ? katas[user.username] ? <ShowKatas katas={katas} /> : null : null
       }
 
     </div>

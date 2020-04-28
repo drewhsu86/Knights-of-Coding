@@ -2,12 +2,19 @@ import React from 'react'
 
 export default function ShowUser(props) {
 
+  // ===========
+  // variables 
+  // ===========
+
   // expect a user object from props 
   const user = props.user
-  console.log(user)
+
+  // ===========
+  // return
+  // ===========
 
   return (
-    <div>
+    <div className="showUsers">
       <h2>{user.username}</h2>
       <h2>{user.name}</h2>
       <h2>{user.honor}</h2>
