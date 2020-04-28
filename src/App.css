@@ -79,6 +79,7 @@ button {
 
 .navTitle {
   display: flex;
+  flex-direction: row;
   justify-self: space-between;
 }
 

@@ -79,7 +79,7 @@ export default function () {
         </div>
 
 
-        <a href={kataInfo.url} target="_blank">
+        <a href={kataInfo.url} target="_blank" rel="noopener noreferrer">
           <button>
             Try this Kata on Codewars!
           </button>
