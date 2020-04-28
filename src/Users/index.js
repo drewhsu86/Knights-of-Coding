@@ -100,7 +100,7 @@ export default function Index(props) {
   // ===========
 
   return (
-    <div className="users">
+    <div className="users page">
       Users page
       <button
         onClick={handleClickSearch}

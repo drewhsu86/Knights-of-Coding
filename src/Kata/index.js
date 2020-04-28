@@ -29,6 +29,7 @@ export default function () {
   // functions 
   // ===========
 
+  // async api call 
   async function kataAPICall(id) {
     let headers = {
       Authorization: process.env.API_KEY,
@@ -37,6 +38,13 @@ export default function () {
 
     updKataInfo(response.data)
     console.log(response.data)
+  }
+
+  // function for separating string into paragraphs 
+  function separateBy(str, sep) {
+    return str.split(sep).map((substr) => {
+      return <p>{substr}</p>
+    })
   }
 
   // ===========
@@ -51,9 +59,13 @@ export default function () {
 
   if (kataInfo) {
     return (
-      <div className="kata">
+      <div className="kata page">
         <h2>{kataInfo.name}</h2>
-        <p>{kataInfo.description}</p>
+
+        <div className="pageText">
+          {separateBy(kataInfo.description, '```')}
+        </div>
+
 
         <a href={kataInfo.url}>
           <button>

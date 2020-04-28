@@ -1,18 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import NavButton from './NavButton'
 
 export default function Nav() {
   return (
-    <div className="navBar">
+    <nav className="navBar">
       <h1>Knights of Coding</h1>
       <div className="navButtons">
-        <Link to="/home">
-          <h3> Home </h3>
+        <Link to="/">
+          <NavButton text="Home" />
         </Link>
         <Link to="/users">
-          <h3> Find a Codewars User </h3>
+          <NavButton text="Find a Codewars User" />
+        </Link>
+        <Link to="/favs">
+          <NavButton text="Your Favorite Users" />
         </Link>
       </div>
-    </div >
+    </nav>
   )
 }
