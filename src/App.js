@@ -44,8 +44,15 @@ function App() {
       favs.push(username)
       updFavs(favs)
       localStorage.setItem('KoC_favs', favs)
+      return true
+    } else {
+      return false
     }
 
+  }
+
+  function childCheckFav(username) {
+    return favs.includes(username)
   }
 
   function childAddUsers(user) {
@@ -76,6 +83,7 @@ function App() {
           addUser={childAddUsers}
           addKatas={childAddKatas}
           addToFav={childAddFav}
+          checkFav={childCheckFav}
         />
       </Route>
       <Route path="/users/:name">
@@ -85,6 +93,7 @@ function App() {
           addUser={childAddUsers}
           addKatas={childAddKatas}
           addToFav={childAddFav}
+          checkFav={childCheckFav}
         />
       </Route>
       <Route path="/kata/:id">

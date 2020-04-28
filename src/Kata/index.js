@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 // =========================================
 // constants outside of functional component
@@ -40,6 +40,14 @@ export default function () {
     console.log(response.data)
   }
 
+  // function for cleaning up strings by replacing characters
+  function replaceWith(str, repArr) {
+    // eliminates instead of replaces if the replaceable
+    // parts of the string are at the beginning or end 
+    // but this is just for cleaning up markdown language 
+    return str.split(repArr[0]).join(repArr[1])
+  }
+
   // function for separating string into paragraphs 
   function separateBy(str, sep) {
     return str.split(sep).map((substr) => {
@@ -64,10 +72,10 @@ export default function () {
 
         <div className="pageText">
           <h4>Created by:</h4>
-          <p>{kataInfo.createdBy ? kataInfo.createdBy.username : 'No creator recorded'}</p>
+          <p> &nbsp; {kataInfo.createdBy ? <Link to={'/users/' + kataInfo.createdBy.username}>{kataInfo.createdBy.username}</Link> : 'No creator recorded'}</p>
 
           <h4>Description:</h4>
-          {separateBy(kataInfo.description, '```')}
+          {separateBy(replaceWith(kataInfo.description, ['__', '']), /```|##/)}
         </div>
 
 

@@ -2,14 +2,18 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import NavButton from './NavButton'
 import NavCastle from './NavCastle'
+import KataKnight from '../Kata/KataKnight'
 
 export default function Nav() {
   return (
     <nav className="navBar">
       <NavCastle />
 
-      <Link path="/">
-        <h1>Knights of Coding</h1>
+      <Link path="/" className="row">
+        <h1>Knights of Coding </h1>
+        <KataKnight
+          style={{ border: "10px solid #333333" }}
+          small />
       </Link>
 
       <div className="navButtons">

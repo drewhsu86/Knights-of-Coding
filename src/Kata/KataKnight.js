@@ -11,7 +11,8 @@ export default function KataKnight(props) {
   return (
 
 
-    <div className={small ? 'wrapper small' : 'wrapper'}>
+    <div className={small ? 'wrapper small' : 'wrapper'}
+      style={props.style}>
 
       <div className="background"
         style={{

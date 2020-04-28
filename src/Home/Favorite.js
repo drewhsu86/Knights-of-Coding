@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Favorite(props) {
   // displays username and whether 
@@ -7,11 +8,15 @@ export default function Favorite(props) {
   return (
     <div className="favUser">
       <h3> Username: </h3>
-      <p>{props.username}</p>
-      <button
-        onClick={e => props.deleteFrom(props.ind, e)}
-      > Delete from Favorites
+
+      <Link to={'/users/' + props.username}>
+        <p> &nbsp; {props.username}</p>
+      </Link>
+
+      <button onClick={e => props.deleteFrom(props.ind, e)}>
+        Delete from Favorites
       </button>
+
     </div>
   )
 }

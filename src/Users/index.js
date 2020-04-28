@@ -34,6 +34,7 @@ export default function Index(props) {
   const addUser = props.addUser
   const addKatas = props.addKatas
   const addToFav = props.addToFav
+  const checkFav = props.checkFav
 
 
   // ===============
@@ -140,7 +141,7 @@ export default function Index(props) {
       </form>
 
       {
-        user ? <ShowUser user={user} addFav={addToFav} /> : null
+        user ? <ShowUser user={user} addFav={addToFav} checkFav={checkFav} /> : null
       }
       {
         user ? katas[user.username] ? <ShowKatas katas={katas} /> : null : null
