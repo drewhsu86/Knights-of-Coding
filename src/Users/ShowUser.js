@@ -63,8 +63,7 @@ export default function ShowUser(props) {
           }
           disabled={props.checkFav(user.username)}
           style={!props.checkFav(user.username) ? {} : {
-            color: 'grey',
-            margin: '20px'
+            color: 'grey'
           }}
         >
           Add to favorites
