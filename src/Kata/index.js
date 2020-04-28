@@ -63,6 +63,10 @@ export default function () {
         <h2>{kataInfo.name}</h2>
 
         <div className="pageText">
+          <h4>Created by:</h4>
+          <p>{kataInfo.createdBy.username}</p>
+
+          <h4>Description:</h4>
           {separateBy(kataInfo.description, '```')}
         </div>
 

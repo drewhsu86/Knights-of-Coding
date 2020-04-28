@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import ShowUser from './ShowUser'
 import ShowKatas from './ShowKatas'
@@ -21,7 +22,8 @@ export default function Index(props) {
   // ===============
 
   // inputs as states 
-  const [nameIpt, updNameIpt] = useState('drewhsu86')
+  const urlName = useParams()['name']
+  const [nameIpt, updNameIpt] = useState(urlName ? urlName : '')
   const [filterWordInpt, updFilterWordIpt] = useState('')
 
 
@@ -93,6 +95,11 @@ export default function Index(props) {
     // call for user's code challenges 
     apiCall(`${CODEWARS_API}users/${nameIpt}/code-challenges/completed`, kata => addKatas(kata, nameIpt), ['data', 'data'])
 
+  } // end of handleClickSearch 
+
+  // function to change the state with the input on change
+  function handleChangeNameIpt(e) {
+    updNameIpt(e.target.value)
   }
 
   // ===========
@@ -101,12 +108,21 @@ export default function Index(props) {
 
   return (
     <div className="users page">
-      Users page
-      <button
-        onClick={handleClickSearch}
+      <h4> Find a Codewars User! </h4>
+
+      <form className="usersForm"
+        onSubmit={handleClickSearch}
       >
-        Search
-      </button>
+        <input type="text"
+          onChange={handleChangeNameIpt}
+          value={nameIpt}
+        />
+
+        <button>
+          Search
+        </button>
+      </form>
+
       {
         user ? <ShowUser user={user} /> : null
       }
