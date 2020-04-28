@@ -7,6 +7,7 @@ import Kata from './Kata'
 import Home from './Home'
 import Nav from './Home/Nav'
 import Favorites from './Home/Favorites'
+import KataKnight from './Kata/KataKnight'
 
 function App() {
 
@@ -75,6 +76,11 @@ function App() {
           favList={favs}
           updFavList={updFavs}
           canStore={canStore}
+        />
+      </Route>
+      <Route path="/sample_badge">
+        <KataKnight
+          small
         />
       </Route>
     </div>
