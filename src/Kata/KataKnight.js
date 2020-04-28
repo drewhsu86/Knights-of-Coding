@@ -3,8 +3,8 @@ import './KataKnight.css'
 
 export default function KataKnight(props) {
 
-  const rank = props.rank || -3
-  const rankText = props.rankText || '3-kyu'
+  const rank = props.rank || -5
+  const rankText = props.rankText || '5 kyu'
   const color = props.color || 'yellow'
   const small = props.small
 
@@ -27,8 +27,8 @@ export default function KataKnight(props) {
             backgroundColor: color
           }}
         >
-          <h2>{rankText.split('-')[0]}</h2>
-          <p>{rankText.split('-')[1].toUpperCase()}</p>
+          <h2>{rankText.split(' ')[0]}</h2>
+          <p>{rankText.split(' ')[1].toUpperCase()}</p>
         </div>
       </div>
 

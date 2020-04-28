@@ -64,14 +64,14 @@ export default function () {
 
         <div className="pageText">
           <h4>Created by:</h4>
-          <p>{kataInfo.createdBy.username}</p>
+          <p>{kataInfo.createdBy ? kataInfo.createdBy.username : 'No creator recorded'}</p>
 
           <h4>Description:</h4>
           {separateBy(kataInfo.description, '```')}
         </div>
 
 
-        <a href={kataInfo.url}>
+        <a href={kataInfo.url} target="_blank">
           <button>
             Try this Kata on Codewars!
           </button>

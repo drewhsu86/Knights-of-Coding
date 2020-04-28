@@ -5,7 +5,10 @@ import NavButton from './NavButton'
 export default function Nav() {
   return (
     <nav className="navBar">
-      <h1>Knights of Coding</h1>
+      <Link path="/">
+        <h1>Knights of Coding</h1>
+      </Link>
+
       <div className="navButtons">
         <Link to="/">
           <NavButton text="Home" />

@@ -25,6 +25,7 @@ export default function Index(props) {
   const urlName = useParams()['name']
   const [nameIpt, updNameIpt] = useState(urlName ? urlName : '')
   const [filterWordInpt, updFilterWordIpt] = useState('')
+  const [errMsg, updErrMsg] = useState('')
 
 
   // variables from props 
@@ -32,6 +33,7 @@ export default function Index(props) {
   const katas = props.katas
   const addUser = props.addUser
   const addKatas = props.addKatas
+  const addToFav = props.addToFav
 
 
   // ===============
@@ -60,22 +62,28 @@ export default function Index(props) {
       Authorization: process.env.API_KEY,
     }
 
-    const response = await axios.get(url, headers)
-    let data = response
+    try {
+      const response = await axios.get(url, headers)
+      let data = response
 
-    // iterate through path (it needs to be an array with keys)
-    if (path) {
-      for (let i = 0; i < path.length; i++) {
-        // for example, if path is ['name']
-        // data = data.name or data['name']
-        data = data[path[i]]
+      // iterate through path (it needs to be an array with keys)
+      if (path) {
+        for (let i = 0; i < path.length; i++) {
+          // for example, if path is ['name']
+          // data = data.name or data['name']
+          data = data[path[i]]
+        }
       }
-    }
-    // by now, data should be the part of response we want 
-    console.log(data)
+      // by now, data should be the part of response we want 
+      console.log(data)
 
-    // useSetState needs to use take data as the first argument 
-    dataFunc(data)
+      // useSetState needs to use take data as the first argument 
+      dataFunc(data)
+    } catch (er) {
+      // print error to error div 
+      console.log(er)
+      updErrMsg(er.message)
+    }
 
   } // end of async apiCall 
 
@@ -90,10 +98,14 @@ export default function Index(props) {
   function handleClickSearch(e) {
     e.preventDefault()
 
-    // call for user data 
-    apiCall(`${CODEWARS_API}users/${nameIpt}`, addUser, ['data'])
-    // call for user's code challenges 
-    apiCall(`${CODEWARS_API}users/${nameIpt}/code-challenges/completed`, kata => addKatas(kata, nameIpt), ['data', 'data'])
+    // call api if name is not empty 
+    if (nameIpt) {
+
+      apiCall(`${CODEWARS_API}users/${nameIpt}`, addUser, ['data'])
+      // call for user's code challenges 
+      apiCall(`${CODEWARS_API}users/${nameIpt}/code-challenges/completed`, kata => addKatas(kata, nameIpt), ['data', 'data'])
+
+    }
 
   } // end of handleClickSearch 
 
@@ -110,6 +122,10 @@ export default function Index(props) {
     <div className="users page">
       <h4> Find a Codewars User! </h4>
 
+      <div className="error">
+        {errMsg ? errMsg : null}
+      </div>
+
       <form className="usersForm"
         onSubmit={handleClickSearch}
       >
@@ -124,7 +140,7 @@ export default function Index(props) {
       </form>
 
       {
-        user ? <ShowUser user={user} /> : null
+        user ? <ShowUser user={user} addFav={addToFav} /> : null
       }
       {
         user ? katas[user.username] ? <ShowKatas katas={katas} /> : null : null

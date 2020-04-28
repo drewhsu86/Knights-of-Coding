@@ -15,6 +15,7 @@ export default function Favorites(props) {
   // variables
   // ===========
 
+  const [forcer, forceUpdate] = useState(true)
   const canStore = props.canStore
   const favList = props.favList
   const updFavList = props.updFavList
@@ -28,6 +29,7 @@ export default function Favorites(props) {
     favList.splice(ind, 1)
     localStorage.setItem('KoC_favs', favList)
     updFavList(favList)
+    forceUpdate(!forcer)
   }
 
   // ===========
@@ -36,17 +38,32 @@ export default function Favorites(props) {
 
   console.log('favs', favList)
   console.log('canStore', canStore)
+  console.log(typeof favList)
 
-  return (
-    <div className="favList page">
-      {
-        !canStore ? <h3> Sorry, but local storage cannot be accessed. </h3> : (!favList || favList.length === 0 ? <h3> No favorites found at this time. </h3> : (favList.map((username, ind) => {
+  if (!canStore) {
+    console.log('local storage invalid', favList)
+    return (<div className="favList page">
+      <h3> No local storage found at this time. </h3>
+    </div>)
+  } else if (!favList || favList.length < 1) {
+    console.log('favList invalid', favList)
+    return (<div className="favList page">
+      <h3> No favorites found at this time. </h3>
+    </div>)
+  } else {
+    console.log('favList found', favList)
+    return (
+      <div className="favList page">
+        {favList.map((username, ind) => {
           return <Favorite
             username={username}
+            deleteFrom={deleteFromFavs}
+            ind={ind}
           />
-        })))
-      }
-    </div>
-  )
+        })}
+      </div>
+    )
+  }
+
 
 }

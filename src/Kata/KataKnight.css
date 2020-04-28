@@ -1,3 +1,12 @@
+div {
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  background-color: none;
+  background-image: none;
+}
+
 /* wrapper always needs to be a square */
 /* or proportions will be off */
 

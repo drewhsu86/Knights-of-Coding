@@ -54,6 +54,11 @@ button {
   padding: 0 15px;
 }
 
+.error {
+  color: red;
+  font-size: 20px;
+}
+
 
 /*=================================*/
 /* Home folder  */
@@ -91,9 +96,22 @@ button {
   color: white;
 }
 
+.introduction {
+  font-size: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homeBtn {
+  margin: 20px;
+}
+
 /*=================================*/
 /* Users Folder  */
 /*=================================*/
+
 
 .usersForm {
   display: flex;
@@ -110,6 +128,63 @@ button {
 
 .usersForm button {
   margin: 10px;
+}
+
+
+.showUserAll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.showUsers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userData {
+  margin: 10px;
+}
+
+
+
+
+/*=================================*/
+/* Users Folder : kata thumbnails */
+/*=================================*/
+
+.showKatas {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.kataThumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 80px;
+  height: 80px;
+
+  background-image: linear-gradient(#884444, #221144);
+  border: 3px solid #aa9900;
+  border-radius: 10px;
+  margin: 10px;
+
+  font-size: 13px;
+  font-weight: thin;
+}
+
+.kataThumb p {
+  margin: 10px;
+}
+
+.kataThumb:hover {
+  background-image: linear-gradient(#88aaaa, #223344);
+  color: black;
 }
 
 /*=================================*/
@@ -132,4 +207,25 @@ button {
     align-self: flex-start;
     
   }
+}
+
+@media (min-width: 600px) {
+  .showUsers {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .userData {
+    background-image: linear-gradient(#444444, #222222);
+    border: 1px solid #999999;
+    border-radius: 10px;
+    padding: 5px 25px;
+    margin: 20px 40px;
+  }
+
+  .showKatas {
+    justify-content: flex-start;
+  }
+
+  
 }

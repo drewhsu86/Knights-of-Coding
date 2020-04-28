@@ -17,6 +17,10 @@ export default function KataThumb(props) {
 
   return (
     <Link to={`/kata/${kata.id}`}>
+      <div className="trophyTop" />
+      <div className="trophyNeck" />
+      <div className="trophyBase" />
+
       <div className="kataThumb">
         <p>
           {kata.name}

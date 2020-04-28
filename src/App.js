@@ -15,9 +15,12 @@ function App() {
   // states 
   // ===========
   const [canStore, updCanStore] = useState(typeof Storage !== 'undefined')
-  const [favs, updFavs] = useState(canStore && localStorage.getItem('KoC_favs') ? localStorage.getItem('KoC_favs') : [])
+  const [favs, updFavs] = useState(canStore && localStorage.getItem('KoC_favs') ? localStorage.getItem('KoC_favs').split(',') : [])
   const [katas, updKatas] = useState({})
   const [currUser, updCurrUser] = useState(null)
+
+  console.log('init favs', favs)
+  console.log(localStorage.getItem('KoC_favs'))
 
   // ===========
   // lifecycle
@@ -25,6 +28,7 @@ function App() {
 
   useEffect(() => {
     // return acts as componentWillUnmount 
+    console.log('KoC_favs', favs)
     return () => {
       localStorage.setItem('KoC_favs', favs)
     }
@@ -34,8 +38,14 @@ function App() {
   // functions 
   // ===========
   function childAddFav(username) {
-    favs.push(username)
-    updFavs(favs)
+
+    if (!favs.includes(username)) {
+      // push if not a repeat 
+      favs.push(username)
+      updFavs(favs)
+      localStorage.setItem('KoC_favs', favs)
+    }
+
   }
 
   function childAddUsers(user) {
@@ -57,7 +67,16 @@ function App() {
       <Nav />
 
       <Route path="/" exact>
-        <Home />
+        <Home addToFav={childAddFav} />
+      </Route>
+      <Route path="/users/" exact>
+        <Users
+          user={currUser}
+          katas={katas}
+          addUser={childAddUsers}
+          addKatas={childAddKatas}
+          addToFav={childAddFav}
+        />
       </Route>
       <Route path="/users/:name">
         <Users
@@ -65,6 +84,7 @@ function App() {
           katas={katas}
           addUser={childAddUsers}
           addKatas={childAddKatas}
+          addToFav={childAddFav}
         />
       </Route>
       <Route path="/kata/:id">
