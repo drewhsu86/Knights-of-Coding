@@ -183,6 +183,8 @@ button {
 
   font-size: 13px;
   font-weight: thin;
+
+  overflow: hidden;
 }
 
 .kataThumb p {
@@ -191,7 +193,9 @@ button {
 
 .kataThumb:hover {
   background-image: linear-gradient(#88aaaa, #223344);
-  color: black;
+  color: orange;
+  font-weight: bold;
+  overflow: visible;
 }
 
 /*=================================*/
