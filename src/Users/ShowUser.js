@@ -34,36 +34,44 @@ export default function ShowUser(props) {
           {user.name ? <h2>Clan Name</h2> : <h2>No Clan</h2>}
           {user.name ? <h4> &nbsp; {user.clan}</h4> : null}
         </div>
+
       </div>
 
-      <button
-        onClick={(e) => {
-          props.addFav(user.username, e)
-          forceUpdate(!forcer)
-        }
-        }
-        disabled={props.checkFav(user.username)}
-        style={!props.checkFav(user.username) ? {} : {
-          color: 'grey'
-        }}
-      >
-        Add to favorites
-      </button>
 
-      <div style={
-        {
-          margin: '30px',
-          padding: '0',
-          borderRadius: '10px',
-          overflow: 'hidden'
-        }
-      }>
-        <KataKnight
-          rank={user.ranks.overall.rank}
-          rankText={user.ranks.overall.name}
-          color={user.ranks.overall.color}
-        />
+      <div className="showUsers">
+
+        <div style={
+          {
+            margin: '30px',
+            padding: '0',
+            borderRadius: '10px',
+            overflow: 'hidden'
+          }
+        }>
+          <KataKnight
+            rank={user.ranks.overall.rank}
+            rankText={user.ranks.overall.name}
+            color={user.ranks.overall.color}
+          />
+        </div>
+
+        <button
+          onClick={(e) => {
+            props.addFav(user.username, e)
+            forceUpdate(!forcer)
+          }
+          }
+          disabled={props.checkFav(user.username)}
+          style={!props.checkFav(user.username) ? {} : {
+            color: 'grey',
+            margin: '20px'
+          }}
+        >
+          Add to favorites
+        </button>
+
       </div>
+
     </div>
   )
 }

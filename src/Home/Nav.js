@@ -9,7 +9,7 @@ export default function Nav() {
     <nav className="navBar">
       <NavCastle />
 
-      <Link path="/" className="row">
+      <Link path="/" className="navTitle">
         <h1>Knights of Coding </h1>
         <KataKnight
           style={{ border: "10px solid #333333" }}

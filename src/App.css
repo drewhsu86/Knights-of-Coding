@@ -61,12 +61,6 @@ button {
 }
 
 
-.row {
-  display: flex;
-  justify-content: space-between;
-}
-
-
 /*=================================*/
 /* Home folder  */
 /*=================================*/
@@ -81,6 +75,11 @@ button {
 
 .navBar h1 {
   font-size: 30px;
+}
+
+.navTitle {
+  display: flex;
+  justify-self: space-between;
 }
 
 .navButtons {
@@ -225,9 +224,11 @@ button {
     font-size: 50px;
   }
 
-  .showUsers {
+  .showUserAll {
+    display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
   }
 
   .userData {
@@ -236,11 +237,14 @@ button {
     border-radius: 10px;
     padding: 5px 25px;
     margin: 20px 40px;
+    min-width: 200px;
   }
 
   .showKatas {
     justify-content: flex-start;
   }
+
+
 
   
 }
