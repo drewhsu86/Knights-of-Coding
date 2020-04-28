@@ -13,6 +13,12 @@ export default function KataKnight(props) {
 
     <div className={small ? 'wrapper small' : 'wrapper'}>
 
+      <div className="background"
+        style={{
+          backgroundColor: color
+        }}
+      />
+
       <div className="arm left" />
       <div className="arm right" />
       <div className="body">

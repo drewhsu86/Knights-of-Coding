@@ -80,7 +80,9 @@ function App() {
       </Route>
       <Route path="/sample_badge">
         <KataKnight
-          small
+          color="blue"
+          rank="-5"
+          rankText="5-kyu"
         />
       </Route>
     </div>
