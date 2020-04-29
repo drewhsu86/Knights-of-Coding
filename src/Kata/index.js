@@ -81,20 +81,27 @@ export default function () {
 
         <h2>  Kata Title: <i>{kataInfo.name}</i> </h2>
 
+        <a href={kataInfo.url} target="_blank" rel="noopener noreferrer">
+          <button>
+            Try this Kata on CodeWars!
+          </button>
+        </a>
+
         <div className="pageText">
           <h4>Created by:</h4>
           <p> &nbsp; {kataInfo.createdBy ? <Link to={'/users/' + kataInfo.createdBy.username}>{kataInfo.createdBy.username}</Link> : 'No creator recorded'}</p>
+
+          <h4>Can be done in:</h4>
+          <p>
+            &nbsp; {kataInfo.languages.join(', ')}
+          </p>
 
           <h4>Description:</h4>
           {separateBy(replaceWith(kataInfo.description, ['__', '']), /```|##/)}
         </div>
 
 
-        <a href={kataInfo.url} target="_blank" rel="noopener noreferrer">
-          <button>
-            Try this Kata on CodeWars!
-          </button>
-        </a>
+
       </div>
     )
   } else {

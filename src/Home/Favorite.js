@@ -9,12 +9,14 @@ export default function Favorite(props) {
     <div className="favUser">
       <h3> Username: </h3>
 
-      <Link to={'/users/' + props.username}>
-        <p> &nbsp; {props.username}</p>
-      </Link>
+      <p> &nbsp;
+        <Link to={'/users/' + props.username}>
+          {props.username}
+        </Link>
+      </p>
 
       <button onClick={e => props.deleteFrom(props.ind, e)}>
-        Delete from Favorites
+        Delete
       </button>
 
     </div>

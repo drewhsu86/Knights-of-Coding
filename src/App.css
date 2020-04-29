@@ -125,6 +125,29 @@ footer {
   margin: 20px;
 }
 
+.favList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.favUser {
+  border: 2px solid #dddddd;
+  border-radius: 20px;
+  padding: 0 20px;
+  margin: 20px;
+  font-size: 20px;
+}
+
+.favUser a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.favUser button {
+  border-radius: 20px;
+}
+
 /*=================================*/
 /* Users Folder  */
 /*=================================*/
@@ -289,6 +312,17 @@ footer {
     margin: 0 10px;
     width: 300px;
     align-self: flex-start;
+  }
+
+  .favList {
+    flex-direction: column;
+    flex-wrap: none;
+    align-items: flex-start;
+  }
+
+  .favUser {
+    border: none;
+    margin: 0 100px;
   }
 }
 
