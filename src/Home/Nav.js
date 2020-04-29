@@ -26,6 +26,9 @@ export default function Nav() {
         <Link to="/favs">
           <NavButton text="Your Favorite Users" />
         </Link>
+        <Link to="/solver">
+          <NavButton text="Solve Some Questions" />
+        </Link>
       </div>
     </nav>
   )

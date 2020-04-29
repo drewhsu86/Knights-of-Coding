@@ -8,6 +8,7 @@ import Home from './Home'
 import Nav from './Home/Nav'
 import Favorites from './Home/Favorites'
 import Footer from './Home/Footer'
+import Solver from './Solver'
 
 
 function App() {
@@ -111,6 +112,9 @@ function App() {
           updFavList={updFavs}
           canStore={canStore}
         />
+      </Route>
+      <Route path="/solver">
+        <Solver />
       </Route>
 
       <Footer />

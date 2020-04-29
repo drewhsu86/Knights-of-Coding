@@ -1,0 +1,46 @@
+[
+  {
+    "text": [
+      "Sort an array of integers. The size of the array may be up to 100.",
+      "Example: sortInts([1, 3, 2, 2]) -> [1, 2, 2, 3]"
+    ],
+    "functionName": "sortInts",
+    "argNames": [
+      "arr"
+    ],
+    "tests": [
+      {
+        "inVal": [
+          [
+            1,
+            3,
+            3,
+            2
+          ]
+        ],
+        "outVal": [
+          1,
+          2,
+          3,
+          3
+        ]
+      },
+      {
+        "inVal": [
+          [
+            5,
+            9001,
+            -1,
+            12
+          ]
+        ],
+        "outVal": [
+          -1,
+          5,
+          12,
+          9001
+        ]
+      }
+    ]
+  }
+]
