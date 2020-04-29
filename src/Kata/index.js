@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link, useParams } from 'react-router-dom'
+import KataSword from './KataSword'
 
 // =========================================
 // constants outside of functional component
@@ -68,6 +69,20 @@ export default function () {
   if (kataInfo) {
     return (
       <div className="kata page">
+
+        <div
+          className="swordIcon optional"
+          style={{
+            borderRadius: '10px',
+            overflow: 'hidden'
+          }}
+        >
+          <KataSword
+            rankText={kataInfo.rank.name}
+            color={kataInfo.rank.color}
+          />
+        </div>
+
         <h2>{kataInfo.name}</h2>
 
         <div className="pageText">
@@ -81,7 +96,7 @@ export default function () {
 
         <a href={kataInfo.url} target="_blank" rel="noopener noreferrer">
           <button>
-            Try this Kata on Codewars!
+            Try this Kata on CodeWars!
           </button>
         </a>
       </div>

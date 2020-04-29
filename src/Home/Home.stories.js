@@ -6,7 +6,5 @@ import NavButton from './NavButton'
 import NavCastle from './NavCastle'
 
 storiesOf('Nav Button', module)
-  .add('Default', () => <NavButton text="Default" />)
-
-storiesOf('Nav Castle Header', module)
-  .add('Default', () => <NavCastle />)
+  .add('Nav Button', () => <NavButton text="Default" />)
+  .add('Nav Castle Wall', () => <NavCastle />)

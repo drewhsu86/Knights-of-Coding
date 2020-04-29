@@ -61,6 +61,7 @@ button {
 }
 
 
+
 /*=================================*/
 /* Home folder  */
 /*=================================*/
@@ -201,11 +202,19 @@ button {
   overflow: visible;
 }
 
+.swordIcon {
+  min-height: 200px;
+}
+
 /*=================================*/
 /* Media Queries  */
 /*=================================*/
 
 @media (max-width: 600px) {
+  .optional {
+    display: none;
+  }
+
   .navButtons {
     flex-direction: column;
 

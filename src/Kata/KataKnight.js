@@ -3,9 +3,10 @@ import './KataKnight.css'
 
 export default function KataKnight(props) {
 
-  const rank = props.rank || -5
-  const rankText = props.rankText || '5 kyu'
-  const color = props.color || 'yellow'
+  // possible props: rank, rankText, color, small
+  // const rank = props.rank || -5
+  const rankText = props.rankText || 'CW Rank'
+  const color = props.color === 'black' ? '#333333' : props.color || '#cc2222'
   const small = props.small
 
   return (

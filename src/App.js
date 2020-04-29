@@ -27,8 +27,12 @@ function App() {
   // ===========
 
   useEffect(() => {
-    // return acts as componentWillUnmount 
     console.log('KoC_favs', favs)
+
+    // scroll to top 
+    window.scrollTo(0, 0)
+
+    // return acts as componentWillUnmount
     return () => {
       localStorage.setItem('KoC_favs', favs)
     }
@@ -105,13 +109,6 @@ function App() {
           favList={favs}
           updFavList={updFavs}
           canStore={canStore}
-        />
-      </Route>
-      <Route path="/sample_badge">
-        <KataKnight
-          color="blue"
-          rank="-5"
-          rankText="5-kyu"
         />
       </Route>
     </div>
