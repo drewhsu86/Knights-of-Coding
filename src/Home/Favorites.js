@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Favorite from './Favorite'
+
 
 export default function Favorites(props) {
   // uses local storage to return favorites 
@@ -53,15 +54,19 @@ export default function Favorites(props) {
   } else {
     console.log('favList found', favList)
     return (
-      <div className="favList page">
-        {favList.map((username, ind) => {
-          return <Favorite
-            username={username}
-            deleteFrom={deleteFromFavs}
-            ind={ind}
-          />
-        })}
+      <div>
+        <center> <h1> Your Favorite Users </h1> </center>
+        <div className="favList page">
+          {favList.map((username, ind) => {
+            return <Favorite
+              username={username}
+              deleteFrom={deleteFromFavs}
+              ind={ind}
+            />
+          })}
+        </div>
       </div>
+
     )
   }
 

@@ -122,7 +122,7 @@ export default function Index(props) {
 
   return (
     <div className="users page">
-      <h4> Find a Codewars User! </h4>
+      <h2> Find a Codewars User! </h2>
 
       <div className="error">
         {errMsg ? errMsg : null}

@@ -137,7 +137,7 @@ export default function ShowKatas(props) {
                 }
               }
 
-              // finally return true if all filters met 
+              // finally return true if all filters met
               return wordFound && langFound
             }).map((kata, ind) => {
               // -----------------//

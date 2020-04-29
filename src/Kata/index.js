@@ -38,7 +38,7 @@ export default function () {
     const response = await axios(`${CODEWARS_API_KATA}${kataID}`, headers)
 
     updKataInfo(response.data)
-    console.log(response.data)
+    // console.log(response.data)
   }
 
   // function for cleaning up strings by replacing characters
@@ -105,6 +105,6 @@ export default function () {
       </div>
     )
   } else {
-    return null
+    return <center><h2>No Kata Info Found!</h2></center>
   }
 }
