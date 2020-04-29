@@ -9,6 +9,10 @@ export default function KataSword(props) {
   const color = props.color || '#cc2222'
   const small = props.small
 
+  // ===========
+  // return
+  // ===========
+
   return (
     <div className={small ? "swordWrapper small" : "swordWrapper"}>
       <div className="background"

@@ -24,7 +24,6 @@ export default function Index(props) {
   // inputs as states 
   const urlName = useParams()['name']
   const [nameIpt, updNameIpt] = useState(urlName ? urlName : '')
-  const [filterWordInpt, updFilterWordIpt] = useState('')
   const [errMsg, updErrMsg] = useState('')
 
 
@@ -77,6 +76,8 @@ export default function Index(props) {
       }
       // by now, data should be the part of response we want 
       console.log(data)
+      // successful api call = no error message 
+      updErrMsg('')
 
       // useSetState needs to use take data as the first argument 
       dataFunc(data)

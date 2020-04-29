@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import KataSword from '../Kata/KataSword'
 
 export default function Index(props) {
 
@@ -21,6 +22,10 @@ export default function Index(props) {
   return (
     <div className="home page">
       <h1>Welcome to the Knights of Coding!</h1>
+
+      <div className="swordIcon optional">
+        <KataSword rankText="&nbsp; Welcome!" color="#661111" />
+      </div>
 
       <div className="introduction pageText">
         <p>Hi, my name is Andrew, and I am always trying to improve my coding skills by using sites such as <a href="https://www.codewars.com/" style={{ textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer">CodeWars.com</a>. Whether you're a grizzled veteran of the coding battlefields or a novice trying to get a grasp of the art, I really recommend going to CodeWars and giving it a shot. </p>

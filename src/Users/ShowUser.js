@@ -40,14 +40,7 @@ export default function ShowUser(props) {
 
       <div className="showUsers">
 
-        <div style={
-          {
-            margin: '30px',
-            padding: '0',
-            borderRadius: '10px',
-            overflow: 'hidden'
-          }
-        }>
+        <div className="swordIcon">
           <KataKnight
             rank={user.ranks.overall.rank}
             rankText={user.ranks.overall.name}

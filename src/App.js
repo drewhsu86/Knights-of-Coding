@@ -7,7 +7,8 @@ import Kata from './Kata'
 import Home from './Home'
 import Nav from './Home/Nav'
 import Favorites from './Home/Favorites'
-import KataKnight from './Kata/KataKnight'
+import Footer from './Home/Footer'
+
 
 function App() {
 
@@ -19,15 +20,15 @@ function App() {
   const [katas, updKatas] = useState({})
   const [currUser, updCurrUser] = useState(null)
 
-  console.log('init favs', favs)
-  console.log(localStorage.getItem('KoC_favs'))
+  // console.log('init favs', favs)
+  // console.log(localStorage.getItem('KoC_favs'))
 
   // ===========
   // lifecycle
   // ===========
 
   useEffect(() => {
-    console.log('KoC_favs', favs)
+    // console.log('KoC_favs', favs)
 
     // scroll to top 
     window.scrollTo(0, 0)
@@ -111,6 +112,8 @@ function App() {
           canStore={canStore}
         />
       </Route>
+
+      <Footer />
     </div>
   );
 }

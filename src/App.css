@@ -13,9 +13,10 @@ body {
 }
 
 .App { 
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100vh;
 }
 
 
@@ -30,6 +31,7 @@ button {
   border: 3px solid grey;
   border-radius: 5px;
   padding: 10px;
+  margin-bottom: 30px;
   background-color: #dddddd;
   color: black;
 }
@@ -60,7 +62,14 @@ button {
   font-size: 20px;
 }
 
-
+footer {
+  width: 100vw;
+  height: 100px;
+  background-color: #111111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /*=================================*/
 /* Home folder  */
@@ -95,7 +104,7 @@ button {
   padding: 0 15px;
   color: #cccccc;
   background-color: #111111;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .navButton:hover {
@@ -162,7 +171,7 @@ button {
 
 
 /*=================================*/
-/* Users Folder : kata thumbnails */
+/* Users Folder : filter and kata thumbnails */
 /*=================================*/
 
 .showKatas {
@@ -191,6 +200,48 @@ button {
   overflow: hidden;
 }
 
+
+.showKataFilter {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.showKataFilter input {
+  font-size: 18px;
+  height: 24px;
+  margin: 10px 0 30px 0;
+}
+
+.showKataFilter h3 {
+  margin: 30px 0 5px 0;
+}
+
+.showKataFilter h5 {
+  margin: 10px 0 5px 0;
+}
+
+
+.filterLangs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.langOn, .langOff {
+  background-color: lightgrey;
+  border: 3px solid grey;
+  border-radius: 5px;
+  margin: 10px 5px 10px 5px; 
+}
+
+.langOff {
+  background-color: darkred;
+  border: 3px dashed red;
+}
+
+
 .kataThumb p {
   margin: 10px;
 }
@@ -202,7 +253,17 @@ button {
   overflow: visible;
 }
 
+.knightIcon {
+  margin: 30px;
+  padding: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
 .swordIcon {
+  border: 5px solid #995555;
+  border-radius: 20px;
+  overflow: hidden;
   min-height: 200px;
 }
 
@@ -217,18 +278,17 @@ button {
 
   .navButtons {
     flex-direction: column;
-
   }
 
   .navButton {
     background-color: #555555;
+    font-size: 12px;
     border: 1px solid #dddddd;
     border-radius: 0;
     padding: 0px 10px;
     margin: 0 10px;
     width: 300px;
     align-self: flex-start;
-    
   }
 }
 

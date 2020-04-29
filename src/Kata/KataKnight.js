@@ -5,12 +5,15 @@ export default function KataKnight(props) {
 
   // possible props: rank, rankText, color, small
   // const rank = props.rank || -5
-  const rankText = props.rankText || 'CW Rank'
+  const rankText = props.rankText || 'Hi there'
   const color = props.color === 'black' ? '#333333' : props.color || '#cc2222'
   const small = props.small
 
-  return (
+  // ===========
+  // return
+  // ===========
 
+  return (
 
     <div className={small ? 'wrapper small' : 'wrapper'}
       style={props.style}>

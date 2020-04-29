@@ -72,10 +72,6 @@ export default function () {
 
         <div
           className="swordIcon optional"
-          style={{
-            borderRadius: '10px',
-            overflow: 'hidden'
-          }}
         >
           <KataSword
             rankText={kataInfo.rank.name}
@@ -83,7 +79,7 @@ export default function () {
           />
         </div>
 
-        <h2>{kataInfo.name}</h2>
+        <h2>  Kata Title: <i>{kataInfo.name}</i> </h2>
 
         <div className="pageText">
           <h4>Created by:</h4>
