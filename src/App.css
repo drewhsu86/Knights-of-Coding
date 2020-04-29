@@ -6,17 +6,15 @@ body {
   background-color: #333333;
   color: white;
   font-family: sans-serif;
-  width: 90%;
-  height: 100%;
   margin: 0 auto;
   padding: 0;
 }
 
 .App { 
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  position: relative;
+  width: 97%;
+  margin: 0;
+  overflow: visible;
 }
 
 
@@ -78,6 +76,7 @@ footer {
 .navBar {
   width: 100%;      
   padding: 0 30px;
+  margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -91,6 +90,7 @@ footer {
   display: flex;
   flex-direction: row;
   justify-self: space-between;
+  margin: 0;
 }
 
 .navButtons {
@@ -122,7 +122,7 @@ footer {
 }
 
 .homeBtn {
-  margin: 20px;
+  margin: 0;
 }
 
 .favList {
@@ -300,6 +300,16 @@ footer {
 /*=================================*/
 
 @media (max-width: 600px) {
+
+  button {
+    margin-top: 20px;
+  }
+
+  footer {
+    width: 100%;
+    padding: 20px;
+  }
+
   .optional {
     display: none;
   }
@@ -329,6 +339,11 @@ footer {
     border: none;
     margin: 0 100px;
   }
+
+  .favUser button {
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
 }
 
 @media (min-width: 600px) {
@@ -357,6 +372,4 @@ footer {
   }
 
 
-
-  
 }

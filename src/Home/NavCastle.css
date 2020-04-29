@@ -22,7 +22,7 @@
   width: 100px;
   height: 40%;
   background-color: #333333;
-  margin: 0 20px;
+  margin: 0;
 }
 
 @media (max-width: 800px) {
