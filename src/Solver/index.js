@@ -213,7 +213,7 @@ export default function Index() {
           <p>
             Welcome to the Homework King's domain! Here you can practice your coding under the stoic presence of the Homework King himself! </p>
           <p>
-            When you feel ready, jump back into CodeWars for some more challenging problems!
+            When you feel ready, jump back into <a href="https://www.codewars.com/" style={{ textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer">CodeWars.com</a> for some more challenging problems!
           </p>
           <button
             onClick={showProblem}>
