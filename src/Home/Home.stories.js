@@ -29,4 +29,11 @@ storiesOf('Favorites List', module)
       </BrowserRouter>
     )
   })
+  .add('Favorite List Page', () => {
+    return (
+      <BrowserRouter>
+        <Favorites />
+      </BrowserRouter>
+    )
+  })
 
