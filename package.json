@@ -36,5 +36,6 @@
   },
   "devDependencies": {
     "@storybook/react": "^5.3.18"
-  }
+  },
+  "proxy": "http://localhost:4000"
 }
