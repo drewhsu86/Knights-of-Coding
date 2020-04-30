@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 16px;
 }
 
 .solverMain button {
@@ -16,6 +17,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
+}
+
+.solverDescription {
+  padding: 30px;
 }
 
 .solverCode, .solverConsole {
@@ -66,4 +72,22 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+
+/* media query browser size */
+@media (min-width: 600px) {
+
+  .solverMain {
+   font-size: 20px;
+  }
+
+  .solverTop, .solverBottom {
+    flex-direction: row;
+  }
+
+  .solverIpt {
+    height: 250px;
+  }
+
 }

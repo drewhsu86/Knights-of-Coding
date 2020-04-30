@@ -52,7 +52,7 @@ export default function Index() {
   // function that handles how the eval does "console log"
   // instead of going to console it goes to a div for text 
   function consFunc(str) {
-    console.log('consFunc: ', str)
+    // console.log('consFunc: ', str) 
     if (!str) {
       str = 'undefined'
     } else if (typeof str === 'object') {
@@ -217,7 +217,7 @@ export default function Index() {
         <div className="solverCode">
           {/* This is the solver code area */}
 
-          <p className="solverInstructions">Write your code in the following text area. The method 'console.log()' should print things into your browser inspector, but please use 'consLog()' to print things into the console text areas in the browser window.</p>
+          <p className="solverInstructions">Write your code in the following text area. </p> <p> Use 'consLog()' to print things to the console.</p>
 
           <h4>Code Here:</h4>
           <textarea
