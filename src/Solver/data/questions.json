@@ -1,7 +1,7 @@
 [
   {
     "text": [
-      "Sort an array of integers. The size of the array may be up to 100.",
+      "Sort an array of integers. The size of the array may be up to 100. You may use an algorithm of any time complexity.",
       "Example: sortInts([1, 3, 2, 2]) -> [1, 2, 2, 3]"
     ],
     "functionName": "sortInts",

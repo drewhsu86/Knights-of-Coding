@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { codeRun, codeReturn } from './QuestionSolve'
 import questions from './data/questions.json'
 import './Solver.css'
+import HWKing from './HWKing'
 
 // if question = questions[i], its keys are 
 // text, functionName, argNames, tests
@@ -99,7 +100,7 @@ export default function Index() {
   // function that resets the page in case your code is so bad 
   function resetProblem(question) {
     updProblemID(question)
-    updSolverIpt(`  // write your function here, don't change the function name \n
+    updSolverIpt(`  // write your function here; don't change the function name \n
      function ${question.functionName}(${question.argNames.join(', ')}) { 
        \n
      }`)
@@ -137,12 +138,15 @@ export default function Index() {
 
         <div className="homeworkKing">
           {/* This is the homework king */}
+          <HWKing />
         </div>
 
         <div className="solverDescription">
           {/* This is the problem description */}
           <h3>Problem Prompt:</h3>
-          {!problem ? 'No Problem Loaded' : problem.text}
+          {!problem ? 'No Problem Loaded' : problem.text.map((str, ind) => {
+            return <p key={ind}>{str}</p>
+          })}
         </div>
 
       </div>

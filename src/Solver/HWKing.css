@@ -1,0 +1,173 @@
+.hwWrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+
+/* body */
+
+.hwBody {
+  position: absolute;
+  bottom: -50%;
+  left: 5%;
+  width: 80%;
+  height: 100%;
+  background-color: darkred;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.stripe {
+  position: absolute;
+  bottom: 50%;
+  width: 10%;
+  height: 50%;
+  background-color: white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.left {
+  left: 20%;
+}
+
+.right {
+  right: 20%;
+}
+
+.dot {
+  width: 50%;
+  height: 8%;
+  border-radius: 50%;
+  background-color: black;
+  margin: 50%;
+}
+
+.hwBodyInner {
+  position: absolute;
+  bottom: 50%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  background-color: #888833;
+}
+
+/* head */
+
+.hwHead {
+  position: absolute;
+  top: 15%;
+  left: 27.5%;
+  width: 35%;
+  height: 45%;
+  border-radius: 50%;
+  background-color: #ff9955;
+  overflow: hidden;
+}
+
+.beard {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background-color: black;
+}
+
+.moustache {
+  position: absolute;
+  bottom: 10%;
+  left: 25%;
+  width: 50%;
+  height: 30%;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.moustacheCutout {
+  position: absolute;
+  bottom: 20%;
+  left: 20%;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background-color: #ff9955;
+}
+
+.hair {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background-color: black;
+}
+
+.hairSide {
+  position: absolute;
+  top: 0;
+  width: 10%;
+  height: 50%;
+  background-color: black;
+}
+
+.hairSide.left {
+  left: 0;
+}
+
+.hairSide.right {
+  right: 0;
+}
+
+/* crown */
+
+.crown {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  width: 40%;
+  height: 10%;
+  background-color: yellow;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.crownTip {
+  position: relative;
+  width: 20%;
+  height: 150%;
+  background-color: yellow;
+}
+
+.jewel {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  width: 80%;
+  padding-top: 100%;
+  background-color: red;
+  border-radius: 50%;
+}
+
+/* dadjokes api */
+.jokeBtn {
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+  width: 20%;
+  margin: 0;
+}
+
+.textBubble {
+  background-color: white;
+  color: black;
+  opacity: 90%;
+  border-radius: 10px;
+  padding: 3%;
+}
+
