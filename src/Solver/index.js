@@ -52,6 +52,7 @@ export default function Index() {
   // function that handles how the eval does "console log"
   // instead of going to console it goes to a div for text 
   function consFunc(str) {
+    console.log('consFunc: ', str)
     if (!str) {
       str = 'undefined'
     } else if (typeof str === 'object') {
@@ -141,6 +142,8 @@ export default function Index() {
     let testPassed = 0
 
     problem.tests.forEach((test, ind) => {
+      // consLog the test number to avoid confusion 
+      consFunc(`Test ${ind + 1} Running:`)
       // for each test see if your return is equal to outVal
       const yourReturn = codeReturn(problem, ind, solverIpt, consFunc)
       outputStr.push(`> - TEST ${ind + 1}  `)
@@ -161,6 +164,9 @@ export default function Index() {
     outputStr.push(`> NUMBER OF TESTS PASSED: ${testPassed}`)
 
     updOutputText(outputStr)
+
+    // if console logs were used we have to grab them from queue
+    consQueue()
   } // handleClickTest 
 
   // function to print stuff that isn't a string 
@@ -238,7 +244,7 @@ export default function Index() {
           {/* This is the solver console area */}
 
           <button
-            onClick={() => { updConsoleText('') }} >
+            onClick={() => { updConsoleText([]) }} >
             Reset Console
           </button>
 
