@@ -83,7 +83,7 @@ export function codeRun(code, consFunc) {
   } catch (er) {
     console.log(er)
 
-    return '> Error: ' + er
+    consLog(er.message)
   }
 
 }

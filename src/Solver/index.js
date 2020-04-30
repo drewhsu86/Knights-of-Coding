@@ -60,7 +60,7 @@ export default function Index() {
     // add strings to queue in this component 
     // to not mess up timings with update state and 
     // other components 
-    queue.push(str)
+    queue.push('> ' + str)
 
   }
 
@@ -69,7 +69,7 @@ export default function Index() {
     queue.forEach((str) => {
       consoleText.push(str)
     })
-    console.log('consoleText', consoleText)
+    // console.log('consoleText', consoleText)
     updConsoleText(consoleText)
     queue = []
     forceUpdate(!forcer)
@@ -113,6 +113,7 @@ export default function Index() {
 
   function handleClickRun() {
     codeRun(solverIpt, consFunc)
+    consFunc('------------- Code Terminated ------------- <')
     consQueue()
   }
 
@@ -123,6 +124,7 @@ export default function Index() {
 
     console.log(codeReturn(problem.functionName, problem.argNames, problem.tests[0].inVal, solverIpt, consFunc))
   }
+
 
   // =============
   // return 
@@ -149,6 +151,16 @@ export default function Index() {
         <div className="solverCode">
           {/* This is the solver code area */}
 
+          <p className="solverInstructions">Write your code in the following text area. The method 'console.log()' should print things into your browser inspector, but please use 'consLog()' to print things into the console text areas in the browser window.</p>
+
+          <h4>Code Here:</h4>
+          <textarea
+            className="solverIpt"
+            value={solverIpt}
+            onChange={handleChangeSolver}
+          />
+
+          <br />
 
           <button
             onClick={handleClickRun}>
@@ -160,28 +172,20 @@ export default function Index() {
             Test
           </button>
 
-          <button
-            onClick={() => {
-              consFunc('x')
-              consQueue()
-            }}>
-            Test ConsFunc
-          </button>
-
-          <p className="solverInstructions">Write your code in the following text area. The method 'console.log()' should print things into your browser inspector, but please use 'consLog()' to print things into the console text areas in the browser window.</p>
-
-          <h4>Code Here:</h4>
-          <textarea
-            className="solverIpt"
-            value={solverIpt}
-            onChange={handleChangeSolver}
-          />
-
         </div>
 
         <div className="solverConsole">
           {/* This is the solver console area */}
-          <h4>Console:</h4>
+
+          <button
+            onClick={() => { updConsoleText('') }} >
+            Reset Console
+          </button>
+
+          <h4>
+            Console:
+          </h4>
+
           <div
             className="consoleText"
           >
