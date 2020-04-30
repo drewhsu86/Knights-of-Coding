@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { codeRun, codeReturn } from './QuestionSolve'
+import { codeRun, codeReturn, compareValues } from './QuestionSolve'
 import questions from './data/questions.json'
 import './Solver.css'
 import HWKing from './HWKing'
@@ -23,7 +23,7 @@ export default function Index() {
   // they are in the server and not from an API so it's easier 
   const [solverIpt, updSolverIpt] = useState('')
   const [consoleText, updConsoleText] = useState([])
-  const [outputText, updOutputText] = useState('')
+  const [outputText, updOutputText] = useState([])
   const [problem, updProblem] = useState(null)
   const [problemID, updProblemID] = useState(-1)
   // use a queue to hold updates to our console 
@@ -31,6 +31,8 @@ export default function Index() {
   let queue = []
   // force update using boolean
   const [forcer, forceUpdate] = useState(true)
+
+
 
 
   // =============
@@ -105,7 +107,7 @@ export default function Index() {
        \n
      }`)
     updConsoleText([])
-    updOutputText('')
+    updOutputText([])
   } // end of resetProblem
 
 
@@ -116,16 +118,70 @@ export default function Index() {
     codeRun(solverIpt, consFunc)
     consFunc('------------- Code Terminated ------------- <')
     consQueue()
-  }
+  } // handleClickRun
 
   // how to use codeReturn
   // codeReturn(functionName, argNames, args, code (as string), console logging function)
 
   function handleClickTest() {
 
-    console.log(codeReturn(problem.functionName, problem.argNames, problem.tests[0].inVal, solverIpt, consFunc))
-  }
+    // // commented out console log to test if codeReturn 
+    // // runs the function written in the code correctly 
+    // console.log(codeReturn(problem.functionName, problem.argNames, problem.tests[0].inVal, solverIpt, consFunc))
 
+    // for each test in tests, compare the inVal and outVal
+    // using compareValue from our QuestionSolve component 
+    // if match, test passed 
+    // if not, test failed 
+
+    // add everything up and print to output string 
+    let outputStr = [`> TOTAL TESTS: ${problem.tests.length} `]
+
+    // keep a counter 
+    let testPassed = 0
+
+    problem.tests.forEach((test, ind) => {
+      // for each test see if your return is equal to outVal
+      const yourReturn = codeReturn(problem, ind, solverIpt, consFunc)
+      outputStr.push(`> - TEST ${ind + 1}  `)
+      outputStr.push(`> ____Input: ${stringIt(test.inVal)}`)
+      outputStr.push(`> ____Expected Output: ${stringIt(test.outVal)}`)
+      outputStr.push(`> ____Your Output: ${stringIt(yourReturn)}`)
+
+      const pass = compareValues(test.outVal, yourReturn)
+      console.log(pass)
+      if (pass) {
+        outputStr.push(`> ____TEST ${ind + 1} PASSED`)
+        testPassed++
+      } else {
+        outputStr.push(`> ____TEST ${ind + 1} FAILED`)
+      }
+    }) // end of forEach over tests of the problem 
+
+    outputStr.push(`> NUMBER OF TESTS PASSED: ${testPassed}`)
+
+    updOutputText(outputStr)
+  } // handleClickTest 
+
+  // function to print stuff that isn't a string 
+  function stringIt(thing) {
+    if (thing === null) {
+      return 'null'
+    }
+    if (thing === undefined) {
+      return 'undefined'
+    }
+    if (typeof thing === 'object') {
+      if (Array.isArray(thing)) {
+        return `[${thing.join(', ')}]`
+      }
+    }
+    if (typeof thing === 'string') {
+      return thing
+    }
+    // number or boolean left 
+    return thing.toString()
+  }
 
   // =============
   // return 
@@ -204,7 +260,11 @@ export default function Index() {
           <div
             className="outputText"
           >
-            {outputText}
+            {
+              outputText.map((str, ind) => {
+                return <p key={ind}>{str}</p>
+              })
+            }
           </div>
 
 

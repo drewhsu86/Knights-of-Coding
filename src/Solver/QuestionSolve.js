@@ -15,11 +15,14 @@ export default function QuestionSolve(props) {
 
 
 // calculates what the person's code returns for the given inputs 
-export function codeReturn(functionName, argNames, args, code, consFunc) {
+export function codeReturn(problem, testNum, code, consFunc) {
   // questions have a specific form:
   // functionName, argName
   // text is irrelevant here 
   // tests[i].inVal and tests[i].outVal 
+  const functionName = problem.functionName
+  const argNames = problem.argNames
+  const args = problem.tests[testNum].inVal
 
   // function to do a fake console log 
   // using a function passed from the component with states 
@@ -93,12 +96,13 @@ export function codeRun(code, consFunc) {
 
 export function compareValues(val1, val2) {
 
+  console.log(val1)
+  console.log('compares to')
+  console.log(val2)
+
   if (typeof val1 !== typeof val2) return false
 
-  // arrays can be compared with compObj because they are 
-  // technically objects whose keys are numbers 
-  // so I removed my compArr function
-  if (Array.isArray(val1) && Array.isArray(val2)) return compObj(val1, val2)
+  if (Array.isArray(val1) && Array.isArray(val2)) return compArr(val1, val2)
 
   if (typeof val1 === 'object' && typeof val2 === 'object' && !Array.isArray(val1) && !Array.isArray(val2)) return compObj(val1, val2)
 
@@ -106,10 +110,18 @@ export function compareValues(val1, val2) {
 
 } // end of compareValues 
 
+// function to compare 2 arrays 
+export function compArr(arr1, arr2) {
+  if (arr1.length !== arr2.length) {
+    return false
+  }
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) return false
+  }
+  return true
+}
 
 // function to compare 2 objects 
-// also compares array because they are objects
-// whose keys are numbers 
 export function compObj(obj1, obj2) {
 
   const arr1 = Object.keys(obj1)
@@ -119,9 +131,11 @@ export function compObj(obj1, obj2) {
     return false
   }
 
-  arr1.forEach((key) => {
+  for (let key in obj1) {
+    // console.log(obj1[key], obj2[key]) 
     if (obj1[key] !== obj2[key]) return false
-  })
+  }
 
+  console.log('true')
   return true
 } // end of compObj 
