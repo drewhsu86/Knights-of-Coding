@@ -164,6 +164,9 @@
 }
 
 .textBubble {
+  width: 80%;
+  min-height: 10%;
+  margin: 0 auto;
   background-color: white;
   color: black;
   opacity: 90%;
