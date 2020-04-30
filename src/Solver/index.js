@@ -88,12 +88,17 @@ export default function Index() {
   function showProblem() {
     let question = questions[0]
 
+    console.log(problemID)
     // if problem = null, problemID should fall into if statement
     if (problemID < questions.length - 1 && questions.length > 0) {
-      updProblem(questions[problemID + 1])
-      updProblemID(problemID + 1)
+      console.log('change problem')
+      const newID = problemID + 1
+      question = questions[newID]
+      updProblem(question)
+      updProblemID(newID)
     } else {
       // loop around if we reached the end of questions 
+      console.log('loop back')
       updProblemID(0)
     }
 
@@ -102,13 +107,14 @@ export default function Index() {
 
   // function that resets the page in case your code is so bad 
   function resetProblem(question) {
-    updProblemID(question)
+    updProblem(question)
     updSolverIpt(`  // write your function here; don't change the function name \n
      function ${question.functionName}(${question.argNames.join(', ')}) { 
        \n
      }`)
     updConsoleText([])
     updOutputText([])
+    forceUpdate(!forcer)
   } // end of resetProblem
 
 
@@ -204,6 +210,10 @@ export default function Index() {
         </div>
 
         <div className="solverDescription">
+          <button
+            onClick={showProblem}>
+            Another Problem
+          </button>
           {/* This is the problem description */}
           <h3>Problem Prompt:</h3>
           {!problem ? 'No Problem Loaded' : problem.text.map((str, ind) => {

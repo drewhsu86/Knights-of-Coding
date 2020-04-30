@@ -30,11 +30,13 @@
 }
 
 .solverCode h4 {
-  margin: 10px 75% 10px 10px 
+  margin: 10px;
+  margin-left: -70%;
 }
 
 .solverConsole h4 {
-  margin: 10px 80% 10px 10px 
+  margin: 10px;
+  margin-left: -80%;
 }
 
 .solverCode button {

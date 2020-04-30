@@ -2,7 +2,7 @@
   {
     "text": [
       "Sort an array of integers. The size of the array may be up to 100. You may use an algorithm of any time complexity.",
-      "Example: sortInts([1, 3, 2, 2]) -> [1, 2, 2, 3]"
+      "Example: sortInts([1, 3, 3, 2]) -> [1, 2, 3, 3]"
     ],
     "functionName": "sortInts",
     "argNames": [
@@ -40,6 +40,65 @@
           12,
           9001
         ]
+      }
+    ]
+  },
+  {
+    "text": [
+      "The king requires that the first letter of certain strings be capitalized. Please write a function that does this to any string."
+    ],
+    "functionName": "capFirstLetter",
+    "argNames": [
+      "str"
+    ],
+    "tests": [
+      {
+        "inVal": [
+          "swords are great!"
+        ],
+        "outVal": "Swords are great!"
+      },
+      {
+        "inVal": [
+          "m"
+        ],
+        "outVal": "M"
+      }
+    ]
+  },
+  {
+    "text": [
+      "His majesty requires that you determine which is higher, the maximum number of an array or one of his favorite integers.",
+      "Example: given [1,3,2] and 5, you should return 5"
+    ],
+    "functionName": "findMaxArrOrNum",
+    "argNames": [
+      "arr",
+      "num"
+    ],
+    "tests": [
+      {
+        "inVal": [
+          [
+            1,
+            3,
+            2
+          ],
+          5
+        ],
+        "outVal": 5
+      },
+      {
+        "inVal": [
+          [
+            1,
+            9999,
+            0,
+            17
+          ],
+          9000
+        ],
+        "outVal": 9999
       }
     ]
   }
