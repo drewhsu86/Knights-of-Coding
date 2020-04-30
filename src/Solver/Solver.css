@@ -86,6 +86,7 @@
 
   .solverTop, .solverBottom {
     flex-direction: row;
+    align-items: flex-start;
   }
 
   .solverIpt {
