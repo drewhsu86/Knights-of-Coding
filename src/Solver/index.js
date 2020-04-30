@@ -210,6 +210,11 @@ export default function Index() {
         </div>
 
         <div className="solverDescription">
+          <p>
+            Welcome to the Homework King's domain! Here you can practice your coding under the stoic presence of the Homework King himself! </p>
+          <p>
+            When you feel ready, jump back into CodeWars for some more challenging problems!
+          </p>
           <button
             onClick={showProblem}>
             Another Problem
