@@ -16,17 +16,17 @@ export default function Nav() {
           small />
       </Link>
 
-      <div className="navButtons">
+      <div className="navButtons" >
         <Link to="/">
           <NavButton text="Home" />
         </Link>
-        <Link to="/users">
+        <Link to="/users" >
           <NavButton text="Find a Codewars User" />
         </Link>
-        <Link to="/favs">
+        <Link to="/favs" >
           <NavButton text="Your Favorite Users" />
         </Link>
-        <Link to="/solver">
+        <Link to="/solver" >
           <NavButton text="Solve Some Questions" />
         </Link>
       </div>

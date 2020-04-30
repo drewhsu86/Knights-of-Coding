@@ -60,17 +60,52 @@ export function codeReturn(functionName, argNames, args, code, consFunc) {
 
 } // end of function codeReturn 
 
+// function to run code as written with eval 
+export function codeRun(code, consFunc) {
+  // function to do a fake console log 
+  // using a function passed from the component with states 
+  function consLog(arg) {
+    // console.log('consLog', arg)
+    // if it's an object we need to stringify 
+    if (typeof arg === 'object') {
+      consFunc(JSON.stringify(arg))
+    } else if (typeof arg === 'string') {
+      consFunc(arg)
+    } else {
+      consFunc(arg.toString())
+    }
+  } // end of function consLog
+
+  // run code using eval 
+
+  try {
+    eval(code)
+  } catch (er) {
+    console.log(er)
+
+    return '> Error: ' + er
+  }
+
+}
+
+
 // compare two outputs to see if they are the same, using helper functions written below to compare arrays and objects 
 
 export function compareValues(val1, val2) {
 
   if (typeof val1 !== typeof val2) return false
 
-  if (typeof val1 === 'object') return compObj(val1, val2)
+  // arrays can be compared with compObj because they are 
+  // technically objects whose keys are numbers 
+  // so I removed my compArr function
+  if (Array.isArray(val1) && Array.isArray(val2)) return compObj(val1, val2)
+
+  if (typeof val1 === 'object' && typeof val2 === 'object' && !Array.isArray(val1) && !Array.isArray(val2)) return compObj(val1, val2)
 
   return val1 === val2
 
-}
+} // end of compareValues 
+
 
 // function to compare 2 objects 
 // also compares array because they are objects
@@ -85,8 +120,8 @@ export function compObj(obj1, obj2) {
   }
 
   arr1.forEach((key) => {
-    if (obj1[arr1[key]] !== obj2[arr1[key]]) return false
+    if (obj1[key] !== obj2[key]) return false
   })
 
   return true
-}
+} // end of compObj 

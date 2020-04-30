@@ -1,0 +1,69 @@
+.solverMain {
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.solverMain button {
+  margin: 20px;
+}
+
+.solverTop, .solverBottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.solverCode, .solverConsole {
+  width: 100%;
+  text-align: center;
+}
+
+.solverCode h4 {
+  margin: 10px 75% 10px 10px 
+}
+
+.solverConsole h4 {
+  margin: 10px 80% 10px 10px 
+}
+
+.solverCode button {
+  display: inline;
+}
+
+.solverInstructions {
+  width: 70%;
+  margin: 20px auto;
+}
+
+.solverIpt {
+  width: 80%;
+  min-height: 200px;
+  font-size: 18px;
+  border-top: 5px solid #aaaaaa;
+  border-left: 5px solid #aaaaaa;
+  border-bottom: 5px solid #555555;
+  border-right: 5px solid #555555; 
+
+}
+
+.consoleText, .outputText {
+  width: 80%;
+  height: 200px;
+  background-color: #334433;
+  color: white;
+  border-top: 5px solid #aaaaaa;
+  border-left: 5px solid #aaaaaa;
+  border-bottom: 5px solid #555555;
+  border-right: 5px solid #555555; 
+  margin: 0 auto;
+  padding: 5px 20px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
