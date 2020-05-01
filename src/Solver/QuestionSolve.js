@@ -24,6 +24,8 @@ export function codeReturn(problem, testNum, code, consFunc) {
   const argNames = problem.argNames
   const args = problem.tests[testNum].inVal
 
+
+
   // function to do a fake console log 
   // using a function passed from the component with states 
   function consLog(arg) {
@@ -116,7 +118,7 @@ export function compArr(arr1, arr2) {
     return false
   }
   for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) return false
+    if (!compareValues(arr1[i], arr2[i])) return false
   }
   return true
 }
@@ -133,7 +135,7 @@ export function compObj(obj1, obj2) {
 
   for (let key in obj1) {
     // console.log(obj1[key], obj2[key]) 
-    if (obj1[key] !== obj2[key]) return false
+    if (!compareValues(obj1[key], obj2[key])) return false
   }
 
   console.log('true')
