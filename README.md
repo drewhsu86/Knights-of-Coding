@@ -23,6 +23,7 @@ Some components in this draft may be further broken down with more components. A
 
 ![Component Hierarchy Image](project2_hierarchy.png)
 
+
 ## API: Codewars API
 
 [Link to Codewars API](https://dev.codewars.com/#get-user)
@@ -37,7 +38,7 @@ The Codewars API has one call to get info about a user account, and a second API
   * I plan to not only style the page but I have a castle/knight aesthetic I want to implement with CSS and maybe some simple images I plan to draw. I will probably write the CSS in App.css to start but if it gets really long I will create and import separate CSS files inside each separate folder for each path. 
   * I will deploy via Surge or Netlify.
   * To fulfill basic MVP, I will make a Storybook setup to show my different styled components. I will probably have more than the minimum number of components because I plan to make some styled thumbnails and other aesthetic elements.
-  * One of the features I would like to include as MVP is the ability to filter the completed kata list of the account that was searched, so the user can choose only a certain language or look for a word match within a title. Also I may put in the option to filter, or rank the list of katas by their rank (Codewars has it's own ranking system for katas).
+  * One of the features I would like to include as MVP is the ability to filter the completed kata list of the account that was searched, so the user can choose only a certain language or look for a word match within a title.
 
 ## Post-MVP 
   * One of my more ambitious MVP goals is to use Javascript eval() to make an area where users can try some algo questions on my app. Unfortunately, Codewars does not give the test cases in their code challenges API call. Obviously, my version would have far fewer features than a site like Codewars or Leetcode but I have played around with this idea before and would like to try implementing it with a JSON file of questions of similar difficulty to our homework questions.
@@ -59,19 +60,19 @@ Estimated times filled in and completed time to be filled in:
 | Activity | Estimated Time (hrs) | Actual Time (hrs) |
 | -------- | -------------- | ----------- |
 | __Monday__ | April 27 | |
-| Project Approval | <= 1 | |
-| Basic React App with Nav and Routes | 0.5 | |
-| Home route: basic page with text and buttons | 0.5 | | 
-| Find users route: API call and display user data | 1 | |
-| User data components such as kata thumbnails | 3 | |
-| Kata route: send parameters and display on new component | 2 | |
+| Project Approval | <= 1 | 1 |
+| Basic React App with Nav and Routes | 0.5 | 0.5 |
+| Home route: basic page with text and buttons | 0.5 | 0.5 | 
+| Find users route: API call and display user data | 1 | 0.5 |
+| User data components such as kata thumbnails | 3 | 2.5 |
+| Kata route: send parameters and display on new component | 2 | 3 |
 | __Tuesday__ | April 28 | |
-| Install Storybook and make library of components | 4 | |
-| Continue CSS | 2 | |
-| Kata filtering system pt.1 | 2 | |
+| Install Storybook and make library of components | 4 | 3 |
+| Continue CSS | 2 | 5 |
+| Kata filtering system pt.1 | 2 | 1 |
 | __Wednesday__ | April 29| |
-| Kata filtering system pt.2 | 6 | |
-| Continue CSS and Storybook | 2 | |
+| Kata filtering system pt.2 | 6 | 5 |
+| Continue CSS and Storybook | 2 | 4 |
 | __Thursday (post-MVP)__ | April 30 | |
-| Post-MVP code-in-this-box with eval() | 5 | |
-| Jest/Enzyme testing | 3 |  |
+| Post-MVP code-in-this-box with eval() | 5 | 9 |
+| Jest/Enzyme testing | 3 | 0 |
