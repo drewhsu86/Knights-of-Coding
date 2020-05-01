@@ -4,10 +4,25 @@ export default function QuestionSolve(props) {
   return (
     <div>
       <h1>Demo Only!</h1>
+
+      {!props.val1 || !props.val2 ? <p> Warning: val1 and/or val2 not passed as props. </p> : <p>
+        {`Are ${props.val1} and ${props.val2} the same?`}
+        <br />
+        {compareValues(props.val1, props.val2) ? 'yes' : 'no'}
+      </p>
+      }
+
+      <h1>Static Examples</h1>
       <p>
         Are [1, 3, 2] and an object with keys ('0': 1, '1': 3, '2': 2 ) the same?
       <br />
         {compareValues([1, 3, 2], { '0': 1, '1': 3, '2': 2 }) ? 'yes' : 'no'}
+      </p>
+
+      <p>
+        {`Are {a: 1, b: {2}} and {a:1, b:{2}} the same?`}
+        <br />
+        {compareValues({ a: 1, b: { b: 2 } }, { a: 1, b: { b: 2 } }) ? 'yes' : 'no'}
       </p>
     </div>
   )
