@@ -1,10 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function QuestionSolve(props) {
+
+  // this component ONLY displayed in storybook, not the app
+
+  // variables
+  const [input1, updInput1] = useState('')
+  const [input2, updInput2] = useState('')
+
+  // functions 
+  function handleChange(e, upd) {
+    upd(e.target.value)
+  }
+
+  // return
   return (
     <div>
       <h1>Demo Only!</h1>
 
+      <label>Value 1</label>
+      <input type="text" value={input1} onChange={e => { handleChange(e, updInput1) }} />
+
+      <label>Value 2</label>
+      <input type="text" value={input2} onChange={e => { handleChange(e, updInput2) }} />
+
+      {!input1 || !input2 ? <p> Warning: val1 and/or val2 have no values. </p> : <p>
+        {`Are ${input1} and ${input2} the same?`}
+        <br />
+        {compareValues(input1, input2) ? 'yes' : 'no'}
+      </p>
+      }
+
+
+      <h1>From Props!</h1>
       {!props.val1 || !props.val2 ? <p> Warning: val1 and/or val2 not passed as props. </p> : <p>
         {`Are ${props.val1} and ${props.val2} the same?`}
         <br />
