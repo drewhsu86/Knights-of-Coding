@@ -3,7 +3,7 @@
 ## Description
 This app was made to show the code exercises I've done on Codewars.com, let people search for other Codewars accounts, and filter through different programming languages when looking which katas (code challenges) that they've done. They will be presented as convenient UI elements that let users quickly look at the language, title and rank of different katas. As opposed to the default Codewars theme, this app has a castle theme that aims to present katas as trophies on a trophy case. Stretch goals include a sub-area where the user try some of the easier algos. 
 
-[Live Link](https://knights-of-coding.netlify.app/users)
+[Live Link](https://knights-of-coding.netlify.app)
 (CORS extension required)
 
 ## Wireframes
