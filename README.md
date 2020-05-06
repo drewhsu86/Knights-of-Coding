@@ -1,10 +1,17 @@
 # Title: Knights of Coding
 
 ## Description
+[Deployed: May 2, 2020]
 This app was made to show the code exercises I've done on Codewars.com, let people search for other Codewars accounts, and filter through different programming languages when looking which katas (code challenges) that they've done. They will be presented as convenient UI elements that let users quickly look at the language, title and rank of different katas. As opposed to the default Codewars theme, this app has a castle theme that aims to present katas as trophies on a trophy case. Stretch goals include a sub-area where the user try some of the easier algos. 
 
 [Live Link](https://knights-of-coding.netlify.app)
-(CORS extension required)
+
+[Updated: May 6, 2020]
+Additionally, I completed a small project in Express that adds a __{ Access-Control-Allow-Origin': '*'}__ header to the API response because when this project was originally deployed, the browser was getting a CORS error due to not having cross-origin access.
+
+[Express proxy server hosted on Heroku](https://github.com/drewhsu86/knights-of-coding-proxy/tree/master)
+
+[Github to Express proxy server](https://knights-of-coding-proxy.herokuapp.com/)
 
 ## Wireframes
 
