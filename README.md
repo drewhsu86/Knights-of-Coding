@@ -9,9 +9,9 @@ This app was made to show the code exercises I've done on Codewars.com, let peop
 [Updated: May 6, 2020]
 Additionally, I completed a small project in Express that adds a __{ Access-Control-Allow-Origin': '*'}__ header to the API response because when this project was originally deployed, the browser was getting a CORS error due to not having cross-origin access.
 
-[Express proxy server hosted on Heroku](https://github.com/drewhsu86/knights-of-coding-proxy/tree/master)
+[Github to Express proxy server](https://github.com/drewhsu86/knights-of-coding-proxy/tree/master)
 
-[Github to Express proxy server](https://knights-of-coding-proxy.herokuapp.com/)
+[Express proxy hosted on Heroku](https://knights-of-coding-proxy.herokuapp.com/)
 
 ## Wireframes
 
