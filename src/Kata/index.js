@@ -7,7 +7,7 @@ import KataSword from './KataSword'
 // constants outside of functional component
 // =========================================
 
-const CODEWARS_API_KATA = `https://www.codewars.com/api/v1/code-challenges/`
+const CODEWARS_API_KATA = `https://knights-of-coding-proxy.herokuapp.com/code-challenges/`
 
 export default function () {
 
@@ -32,13 +32,11 @@ export default function () {
 
   // async api call 
   async function kataAPICall(id) {
-    let headers = {
-      Authorization: process.env.API_KEY,
-    }
-    const response = await axios(`${CODEWARS_API_KATA}${kataID}`, headers)
+
+    const response = await axios(`${CODEWARS_API_KATA}${kataID}`)
 
     updKataInfo(response.data)
-    // console.log(response.data)
+    // console.log(response.data.data)
   }
 
   // function for cleaning up strings by replacing characters

@@ -8,7 +8,7 @@ import ShowKatas from './ShowKatas'
 // constants outside of functional component
 // =========================================
 
-const CODEWARS_API = `https://www.codewars.com/api/v1/`
+const CODEWARS_API = `https://knights-of-coding-proxy.herokuapp.com/`
 
 export default function Index(props) {
   // the states we store locally are 
@@ -58,12 +58,13 @@ export default function Index(props) {
 
     // path is an optional argument to dive into a response datastructre
 
-    let headers = {
-      Authorization: process.env.API_KEY,
-    }
+    // // Currently doesnt need api key
+    // let headers = {
+    //   Authorization: process.env.API_KEY,
+    // }
 
     try {
-      const response = await axios.get(url, headers)
+      const response = await axios.get(url)
       let data = response
 
       // iterate through path (it needs to be an array with keys)
