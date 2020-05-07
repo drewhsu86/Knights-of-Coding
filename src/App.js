@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Route } from 'react-router-dom'
+import axios from 'axios'
 import Users from './Users'
 import Kata from './Kata'
 
@@ -31,8 +32,8 @@ function App() {
   useEffect(() => {
     // console.log('KoC_favs', favs)
 
-    // scroll to top 
-    window.scrollTo(0, 0)
+    // wake up proxy
+    wakeProxy()
 
     // return acts as componentWillUnmount
     return () => {
@@ -40,9 +41,21 @@ function App() {
     }
   }, [])
 
+  useEffect(() => {
+    // scroll to top 
+    window.scrollTo(0, 0)
+  })
+
   // ===========
   // functions 
   // ===========
+
+  // we are doing this to wake up the Heroku app
+  async function wakeProxy() {
+    const proxyRoot = await axios('https://knights-of-coding-proxy.herokuapp.com/')
+    console.log(proxyRoot)
+  }
+
   function childAddFav(username) {
 
     if (!favs.includes(username)) {
